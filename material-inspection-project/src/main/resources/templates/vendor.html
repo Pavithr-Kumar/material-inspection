@@ -113,7 +113,7 @@
 <body>
  <nav th:include="index :: nav"></nav>
   <header>
-    <h1>Plants</h1>
+    <h1>Vendors</h1>
   </header>
 
   <div class="buttons">
@@ -126,7 +126,7 @@
     <thead>
       <tr>
         
-        <th>Plant Id</th>
+        <th>Vendor Id</th>
         <th>Name</th>
         <th>Email</th>
         <th>Location</th>
@@ -142,7 +142,7 @@
         <td th:text=" ${vendor.vendorEmail}"></td>
         <td>  <span th:text= "${vendor.vendorCity}"></span>, &nbsp;&nbsp;<span th:text=" ${vendor.vendorState}"></span> </td>
         <td><a th:href="@{/zetta/vendor/edit(vendorId=${vendor.vendorId})}" ><i class="fa-solid fa-pen-to-square"></i></a></td>
-        <td><a th:href="@{/zetta/vendor/delete(vendorId=${ vendor.vendorId})}"><i style="color:red" class="fa-solid fa-trash"></i></a></td>
+        <td><a th:href="@{/zetta/vendor/delete(vendorId=${ vendor.vendorId})}" onclick="return confirm('Do you want to delete this plant ?')"><i style="color:red" class="fa-solid fa-trash"></i></a></td>
       </tr>
       <!-- Add more rows as needed -->
     </tbody>

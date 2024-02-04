@@ -140,7 +140,7 @@
         <td th:text=" ${plant.plantName}"></td>
         <td>  <span th:text= "${plant.plantCity}"></span>, &nbsp;&nbsp;<span th:text=" ${plant.plantState}"></span> </td>
         <td><a th:href="@{/zetta/plant/edit(plantId=${plant.plantId})}" ><i class="fa-solid fa-pen-to-square"></i></a></td>
-        <td><a th:href="@{/zetta/plant/delete(plantId=${ plant.plantId})}"><i style="color:red" class="fa-solid fa-trash"></i></a></td>
+        <td><a th:href="@{/zetta/plant/delete(plantId=${ plant.plantId})}" onclick="return confirm('Do you want to delete this plant?')"><i style="color:red" class="fa-solid fa-trash"></i></a></td>
       </tr>
       <!-- Add more rows as needed -->
     </tbody>

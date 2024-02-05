@@ -38,7 +38,7 @@ public class PlantService {
 		
 	}
 
-	public Plant getPlantById(Integer plantId) {
+	public Plant getPlantById(String plantId) {
 		
 		return plantRepository.findById(plantId).get();
 	}

@@ -113,11 +113,11 @@
 <body>
  <nav th:include="index :: nav"></nav>
   <header>
-    <h1>Plants</h1>
+    <h1>Characteristics</h1>
   </header>
 
   <div class="buttons">
-    <a href="/zetta/plant/new" class="button">Add</a>
+    <a href="/zetta/plant/new" class="button">Add Characteristics</a>
     <a href="/zetta/plant/show-all" class="button">Show All</a>
 
   </div>
@@ -126,12 +126,12 @@
     <thead>
       <tr>
         
-        <th>Plant Id</th>
-        <th>Name</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th>Characteristic Id</th>
+        <th>Characteristic Description</th>
+        <th>Material Id</th>
+        <th>Tolerance Upper Limit</th>
+        <th>Tolerance Lower Limit</th>
+        <th>Unit of Measurement</th>
       </tr>
     </thead>
     <tbody th:each=" plant :${plants}">

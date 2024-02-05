@@ -45,7 +45,7 @@ import com.zettamine.spring.mi.service.PlantService;
 		}
 		
 		@GetMapping("/plant/edit")
-		public String updatePlant(Model model,@RequestParam Integer plantId) {
+		public String updatePlant(Model model,@RequestParam String plantId) {
 			model.addAttribute("plant", plantService.getPlantById(plantId));
 			return AppConstants.PLANT_FORM_VIEW;
 		}

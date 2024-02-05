@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vendors Page</title>
-   <script src="https://kit.fontawesome.com/9dc55b3f56.js" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/9dc55b3f56.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -128,7 +128,8 @@
         
         <th>Plant Id</th>
         <th>Name</th>
-        <th>Location</th>
+        <th>City</th>
+        <th>State</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
@@ -138,7 +139,8 @@
         
         <td th:text=" ${plant.plantId}"></td>
         <td th:text=" ${plant.plantName}"></td>
-        <td>  <span th:text= "${plant.plantCity}"></span>, &nbsp;&nbsp;<span th:text=" ${plant.plantState}"></span> </td>
+        <td th:text= "${plant.plantCity}"></td>
+        <td th:text= "${plant.plantState}"></td>
         <td><a th:href="@{/zetta/plant/edit(plantId=${plant.plantId})}" ><i class="fa-solid fa-pen-to-square"></i></a></td>
         <td><a th:href="@{/zetta/plant/delete(plantId=${ plant.plantId})}" onclick="return confirm('Do you want to delete this plant?')"><i style="color:red" class="fa-solid fa-trash"></i></a></td>
       </tr>

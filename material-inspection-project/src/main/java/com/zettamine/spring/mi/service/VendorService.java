@@ -22,7 +22,7 @@ public class VendorService {
 	}
 	
 	public List<Vendor> getAllVendors(){
-		return vendorRepository.findAllByVendorActiveStatus("YES");
+		return vendorRepository.findAllByVendorActiveStatusOrderByVendorId("YES");
 	}
 	
 	public void deleteVendor(Integer vendorId) {

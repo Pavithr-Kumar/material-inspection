@@ -9,6 +9,6 @@ import com.zettamine.spring.mi.entities.Vendor;
 
 public interface VendorRepository extends JpaRepository<Vendor, Serializable> {
 
-	List<Vendor> findAllByVendorActiveStatus(String string);
+	List<Vendor> findAllByVendorActiveStatusOrderByVendorId(String string);
 
 }

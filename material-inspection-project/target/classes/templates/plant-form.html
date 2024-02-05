@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./jsp/app-details.css">
-    <script src="https://kit.fontawesome.com/9dc55b3f56.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9dc55b3f56.js" ></script>
     <title>Applicant Details</title>
     <style>
     
@@ -132,8 +132,8 @@ form .span{
 </head>
 <body>
 <nav th:include="index :: nav"></nav>
-    <h1 th:if="${plant.plantId==null}"><i class="fa-solid fa-user-plus"></i>&nbsp; Add Plant  </h1>
-    <h1 th:if="${plant.plantId!=null}"><i class="fa-solid fa-user-plus"></i>&nbsp; Update Palnt  </h1>
+    <h1 th:if="${plant.plantId==null}"><i class="fa-solid fa-user-plus"></i>&nbsp; Add Plant Details  </h1>
+    <h1 th:if="${plant.plantId!=null}"><i class="fa-solid fa-user-plus"></i>&nbsp; Update Plant Details  </h1>
     <div id="container">
         <form action="/zetta/plant/add" method="post" th:object="${plant}">
             <div class="form">
@@ -141,6 +141,7 @@ form .span{
            
             <div class="col">
                 <div id="subcol1">
+                    <label for="name">Plant Id <span style="color: red;">*</span></label>
                     <label for="name">Name <span style="color: red;">*</span></label>
                     <label for="name">State<span style="color: red;">*</span></label>
                     <label for="name">City<span style="color: red;">*</span></label>
@@ -148,6 +149,7 @@ form .span{
                      
                 </div>
                 <div th:if="${plant.plantId==null}" id="subcol2">
+                    <input type="text" name="plantId" required placeholder="plant id" th:feild="*{plantId}">
                     <input type="text" name="plantName" required placeholder="name" th:feild="*{plantName}">
                     
                     <select name="plantState" th:feild="*{plantState}">
@@ -164,7 +166,7 @@ form .span{
                 </div>
                 
                 <div th:if="${plant.plantId!=null}" id="subcol2">
-                   <input type="hidden" name="plantId" th:feild="*{plantId}" th:value="${plant.plantId}">
+                   <input type="text" name="plantId" th:feild="*{plantId}" th:value="${plant.plantId}">
                     <input type="text" name="plantName" th:value="${plant.plantName}" required placeholder="name" th:feild="*{plantName}">
                     
                     <select name="plantState" th:feild="*{plantState}" th:value="${plant.plantState}">

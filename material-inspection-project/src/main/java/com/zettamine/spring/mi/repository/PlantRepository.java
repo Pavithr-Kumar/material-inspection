@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.zettamine.spring.mi.entities.Plant;
-import com.zettamine.spring.mi.entities.Vendor;
+
 
 public interface PlantRepository extends JpaRepository<Plant, Serializable>  {
 

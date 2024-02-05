@@ -59,6 +59,7 @@
         <h2>Login</h2>
         <form th:action="@{/zetta/login}" method="post" th:object="${user}">
             <input type="text" placeholder="Username" name="userName" th:feild="*{userName}" required >
+            <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span>
             <input type="password" placeholder="Password" name="userPassword" th:feild="*{userPassword}"  required >
             <button type="submit">Login</button>
         </form>

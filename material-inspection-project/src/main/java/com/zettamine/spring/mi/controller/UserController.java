@@ -2,6 +2,7 @@ package com.zettamine.spring.mi.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import com.zettamine.spring.mi.entities.User;
 import com.zettamine.spring.mi.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/zetta")
@@ -24,8 +26,15 @@ public class UserController {
 
 	/*-----------Login details validation----------*/
 	@PostMapping("/login")
-	public String validateLogin(User user,
-			                    HttpSession session) {
+	public String validateLogin(
+			                    //   @Valid User user,
+			                     User user,
+			                    HttpSession session,
+			                    BindingResult results) {
+		if(results.hasErrors()) {
+			return AppConstants.LOGIN_VIEW;
+		}
+		
 		session.setAttribute("user", user.getUserName());
 		if(userService.validateUser(user)) {
 			
